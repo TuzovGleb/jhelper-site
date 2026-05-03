@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Мои дела — jhelper</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="cases.css" />
+</head>
+<body>
+
+<header class="app-header" id="header">
+  <div class="container app-header-inner">
+    <a href="index.html" class="logo">jhelper<span class="dot">.</span></a>
+    <div class="profile">
+      <button class="btn btn-secondary btn-sm" aria-label="Тема">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <div class="avatar" title="М. Соколов">МС</div>
+    </div>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div class="page-head-row">
+      <div>
+        <h1>Мои дела</h1>
+        <div class="sub"><strong>3</strong> активных дела · 1 в архиве</div>
+      </div>
+      <a href="#" class="btn btn-primary header-cta" id="newCaseBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        Новое дело
+      </a>
+    </div>
+
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="Поиск по названию, номеру, стороне…" />
+      </div>
+      <div class="filter-chips">
+        <button class="chip is-active">Активные</button>
+        <button class="chip chip-outline">В архиве</button>
+        <button class="chip chip-outline">Все</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container tpl-strip">
+  <div class="tpl-strip-head">
+    <h3>Начать с шаблона</h3>
+    <span class="lbl">Готовая структура дела</span>
+  </div>
+  <div class="tpl-row">
+    <div class="tpl-card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <div>
+        <div class="ttl">Оспаривание налогов</div>
+        <div class="meta">Налоговый спор · АС</div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/></svg></div>
+      <div>
+        <div class="ttl">Защита по 14.32 КоАП</div>
+        <div class="meta">Антимонопольное · СОЮ</div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+      <div>
+        <div class="ttl">Спор о товарном знаке</div>
+        <div class="meta">ИС · СИП</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases-section">
+  <div class="container">
+    <div class="cases-grid">
+      <a href="chat.html" class="card is-clickable case-card">
+        <div class="case-head">
+          <div>
+            <h3>Оспаривание доначислений по НДС</h3>
+            <div class="case-type">Налоговый спор · АС г. Москвы</div>
+          </div>
+          <button class="menu-btn" aria-label="Меню" onclick="event.preventDefault();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+          </button>
+        </div>
+        <p class="case-preview">Подготовил позицию из 9 тезисов. Нужно уточнить, есть ли акт сверки за III квартал…</p>
+        <div class="status-row"><span class="dot-status active"></span>Активно · заседание 14.05</div>
+        <div class="case-metrics">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>6 документов</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>2 чата</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>обновлено вчера</span>
+        </div>
+      </a>
+
+      <a href="chat.html" class="card is-clickable case-card">
+        <div class="case-head">
+          <div>
+            <h3>Иванов / Петров — раздел наследства</h3>
+            <div class="case-type">Наследственный спор · Тверской р/с</div>
+          </div>
+          <button class="menu-btn" aria-label="Меню" onclick="event.preventDefault();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+          </button>
+        </div>
+        <p class="case-preview">Запросил у клиента справки нотариуса и оригинал завещания. Готовлю встречный иск…</p>
+        <div class="status-row"><span class="dot-status active"></span>Активно</div>
+        <div class="case-metrics">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>11 документов</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>1 чат</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>3 дня назад</span>
+        </div>
+      </a>
+
+      <a href="chat.html" class="card is-clickable case-card">
+        <div class="case-head">
+          <div>
+            <h3>ООО «Рассвет» — оспаривание сделки</h3>
+            <div class="case-type">Корпоративный спор · АС МО</div>
+          </div>
+          <button class="menu-btn" aria-label="Меню" onclick="event.preventDefault();event.stopPropagation();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+          </button>
+        </div>
+        <p class="case-preview">Аудит договора показал риск по п. 7.2 — внесены варианты правок. Жду решения клиента…</p>
+        <div class="status-row"><span class="dot-status active"></span>Активно</div>
+        <div class="case-metrics">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>4 документа</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>3 чата</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>неделю назад</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<button class="fab" id="fabBtn">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+  Новое дело
+</button>
+
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Новое дело</h3>
+    <div class="sub">Заполните минимум — остальное добавите позже.</div>
+    <div class="field">
+      <label class="label">Название дела</label>
+      <input class="input" placeholder="Например: Оспаривание доначислений по НДС" />
+    </div>
+    <div class="field">
+      <label class="label">Тип</label>
+      <select class="select">
+        <option>Налоговый спор</option>
+        <option>Договорный спор</option>
+        <option>Корпоративный спор</option>
+        <option>Трудовой спор</option>
+        <option>Другое</option>
+      </select>
+    </div>
+    <div class="field">
+      <label class="label">Краткая фабула</label>
+      <textarea class="textarea" rows="3" placeholder="2–3 предложения о ситуации"></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modalCancel">Отмена</button>
+      <a href="chat.html" class="btn btn-primary">Создать дело</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const header = document.getElementById('header');
+const onScroll = () => { if(window.scrollY > 4) header.classList.add('scrolled'); else header.classList.remove('scrolled'); };
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+const modal = document.getElementById('modal');
+const open = (e) => { e && e.preventDefault(); modal.classList.add('open'); };
+document.getElementById('newCaseBtn').addEventListener('click', open);
+document.getElementById('fabBtn').addEventListener('click', open);
+document.getElementById('modalCancel').addEventListener('click', () => modal.classList.remove('open'));
+modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
+</script>
+</body>
+</html>

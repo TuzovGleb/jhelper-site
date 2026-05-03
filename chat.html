@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Чат — jhelper</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+
+<header class="app-header" id="header">
+  <div class="container app-header-inner">
+    <div class="head-left">
+      <a href="cases.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+        К делам
+      </a>
+      <div class="case-title">
+        <span class="ttl">Оспаривание доначислений по НДС</span>
+        <span class="crumb">6 документов · 2 чата · АС г. Москвы</span>
+      </div>
+    </div>
+    <div class="head-right">
+      <div class="mode-toggle" role="tablist">
+        <button class="active" title="Быстрый ответ за секунды"><span>⚡</span> Быстрая</button>
+        <button title="Глубокий разбор за 1–2 минуты"><span>🧠</span> Глубокая</button>
+      </div>
+      <div class="quota">14 из 20 запросов</div>
+      <div class="avatar avatar-sm" title="М. Соколов">МС</div>
+    </div>
+  </div>
+</header>
+
+<div class="workbench">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-tabs">
+      <button class="sb-tab active" data-tab="chats">Чаты</button>
+      <button class="sb-tab" data-tab="docs">Документы</button>
+      <button class="sb-tab" data-tab="cmds">Команды</button>
+    </div>
+    <div class="sb-search">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="Поиск" />
+      </div>
+    </div>
+
+    <div class="sb-body" id="sbBody">
+      <!-- Chats tab default -->
+      <button class="sb-action">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        Новый чат
+      </button>
+      <div class="sb-item active">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="body">
+          <div class="ttl">Позиция по НДС</div>
+          <div class="preview">Подготовил позицию из 9 тезисов…</div>
+        </div>
+        <span class="ts">сейчас</span>
+      </div>
+      <div class="sb-item">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <div class="body">
+          <div class="ttl">Аудит договора поставки</div>
+          <div class="preview">Топ-3 риска: п. 7.2, п. 4.1…</div>
+        </div>
+        <span class="ts">вчера</span>
+      </div>
+
+      <div class="sb-cmd-head">Команды для этого дела</div>
+      <div class="sb-cmd-list">
+        <button class="sb-cmd"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/></svg>Позиция по материалам</button>
+        <button class="sb-cmd"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="14" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg>Хронология с цитатами</button>
+        <button class="sb-cmd"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Поиск противоречий</button>
+        <button class="sb-cmd"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Расчёт неустойки</button>
+        <button class="sb-cmd"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/></svg>Возражения / апелляция</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <main class="chat">
+    <div class="chat-body">
+      <div class="chat-inner">
+
+        <!-- Welcome (empty state) -->
+        <section class="welcome" id="welcome">
+          <h2>С чего начать?</h2>
+          <p class="sub">Выберите команду — или опишите задачу своими словами.</p>
+          <div class="preset-grid">
+            <button class="preset-card" data-preset="interview">
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                <span class="preset-badge">Без документов</span>
+              </div>
+              <h4 class="preset-name">Интервью клиента</h4>
+              <p class="preset-desc">20–40 уточняющих вопросов и дерево «если/то».</p>
+            </button>
+
+            <button class="preset-card" data-preset="plan72">
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></div>
+                <span class="preset-badge">Без документов</span>
+              </div>
+              <h4 class="preset-name">План на 72 часа</h4>
+              <p class="preset-desc">Что сделать срочно и что нельзя пропустить.</p>
+            </button>
+
+            <button class="preset-card" data-preset="checklist">
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
+                <span class="preset-badge">Без документов</span>
+              </div>
+              <h4 class="preset-name">Чек-лист доказательств</h4>
+              <p class="preset-desc">Что нужно доказать и чем это подтверждается.</p>
+            </button>
+
+            <button class="preset-card" data-preset="penalty">
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+                <span class="preset-badge">Без документов</span>
+              </div>
+              <h4 class="preset-name">Расчёт неустойки и процентов</h4>
+              <p class="preset-desc">С привязкой к ставке ЦБ и таблицей.</p>
+            </button>
+
+            <button class="preset-card" data-preset="duty">
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg></div>
+                <span class="preset-badge">Без документов</span>
+              </div>
+              <h4 class="preset-name">Расчёт госпошлины</h4>
+              <p class="preset-desc">Точная сумма по 333.19/333.21 НК.</p>
+            </button>
+
+            <button class="preset-card disabled" disabled>
+              <div class="top">
+                <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="15" r="2.5"/></svg></div>
+                <span class="preset-badge locked">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+                  Загрузите документ
+                </span>
+              </div>
+              <h4 class="preset-name">Аудит договора</h4>
+              <p class="preset-desc">Топ-риски и варианты правок формулировок.</p>
+            </button>
+          </div>
+          <div class="welcome-foot">
+            <a href="#" id="allCmds">Все 13 команд →</a>
+          </div>
+        </section>
+
+        <!-- Sample exchange -->
+        <div class="msg-row user">
+          <div class="msg msg-user">Сделай позицию по делу. Истец просит снижение неустойки по 333 ГК — нужно возражение.</div>
+          <span class="msg-time">14:02</span>
+        </div>
+
+        <div class="msg-row">
+          <div class="msg msg-ai">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2z"/></svg>
+            </div>
+            <div class="body">
+              <div class="who">jhelper</div>
+              <p>Собрал позицию из 9 тезисов с привязкой к страницам ваших документов. Кратко — три ключевых:</p>
+              <h4>1. Размер неустойки соразмерен последствиям</h4>
+              <p>Просрочка — 47 дней, размер требований — 8% годовых, что соответствует двукратной ключевой ставке ЦБ на спорный период.</p>
+              <blockquote>Неустойка не может быть снижена ниже двукратной учётной ставки Банка России — Опр. ВС от 21.12.2023 № 305-ЭС23-1294.</blockquote>
+              <h4>2. Бремя доказывания на ответчике</h4>
+              <p>Ответчик не представил доказательств того, что начисленная неустойка явно несоразмерна. Ссылается на «общую рыночную практику» — без расчёта.</p>
+              <h4>3. Акт сверки от 30.06 фиксирует признание долга</h4>
+              <p>Это исключает довод об «отсутствии оснований для начисления» — стр. 4 акта.</p>
+              <div class="src-row">
+                <button class="src-pill">[ВС РФ, 21.12.2023]</button>
+                <button class="src-pill">[Договор поставки, п. 5.3]</button>
+                <button class="src-pill">[Акт сверки, с. 4]</button>
+                <button class="src-pill">[АС МО, 14.03.2025]</button>
+                <button class="src-pill">+5 источников</button>
+              </div>
+              <div class="msg-actions">
+                <button title="Копировать"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+                <button title="Скачать .docx"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v12m0 0l-4-4m4 4l4-4"/><path d="M5 20h14"/></svg></button>
+                <button title="Уточнить"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+                <button title="Сохранить как документ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></button>
+                <button title="👍"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9V5a3 3 0 0 0-6 0v4H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12.5a2 2 0 0 0 2-1.6L21 11a2 2 0 0 0-2-2z"/></svg></button>
+                <button title="👎"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="transform:rotate(180deg)"><path d="M14 9V5a3 3 0 0 0-6 0v4H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12.5a2 2 0 0 0 2-1.6L21 11a2 2 0 0 0-2-2z"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <span class="msg-time">14:02 · Глубокая</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="composer-wrap">
+      <div class="composer">
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <button class="cmd-chip" id="openCmds">⚡ Команды</button>
+          <button class="icon-btn" title="Прикрепить">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.5l-9 9a5.5 5.5 0 0 1-7.8-7.8l9-9a3.7 3.7 0 0 1 5.2 5.2l-9 9a1.8 1.8 0 0 1-2.6-2.6L14 8.7"/></svg>
+          </button>
+        </div>
+        <div class="composer-row">
+          <textarea id="ta" rows="1" placeholder="Опишите ситуацию, вопрос или запрос к помощнику…"></textarea>
+          <div class="composer-side">
+            <button class="send-btn" title="Отправить">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="composer-hint">Enter — отправить · Shift+Enter — новая строка</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Preset modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal" id="modalContent">
+    <div class="modal-head">
+      <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></div>
+      <div>
+        <h3 id="modalTitle">План на 72 часа</h3>
+        <div class="desc" id="modalDesc">Что сделать срочно, что зафиксировать, какие сроки нельзя пропустить.</div>
+      </div>
+    </div>
+    <hr/>
+    <div id="modalFields">
+      <div class="field">
+        <label class="label">Тип ситуации</label>
+        <select class="select">
+          <option>Пришла проверка</option>
+          <option>Получили иск</option>
+          <option>Контрагент перестал платить</option>
+          <option>Поступила претензия</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="label">Краткое описание</label>
+        <textarea class="textarea" rows="3" placeholder="2–3 предложения о ситуации"></textarea>
+      </div>
+      <div class="field">
+        <label class="label">Когда произошло</label>
+        <select class="select">
+          <option>Сегодня</option>
+          <option>Вчера</option>
+          <option>На этой неделе</option>
+          <option>Раньше</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button class="raw-toggle">Я заполню сам — дайте промпт</button>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-ghost" id="modalCancel">Отмена</button>
+        <button class="btn btn-primary" id="modalSubmit">Получить результат →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 4) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+}, {passive:true});
+
+// Sidebar tabs
+document.querySelectorAll('.sb-tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.sb-tab').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+  });
+});
+
+// Auto-grow textarea
+const ta = document.getElementById('ta');
+ta && ta.addEventListener('input', () => {
+  ta.style.height = 'auto';
+  ta.style.height = Math.min(ta.scrollHeight, 160) + 'px';
+});
+
+// Modal
+const modal = document.getElementById('modal');
+const presetData = {
+  interview: { title:'Интервью клиента', desc:'20–40 уточняющих вопросов и дерево «если/то».' },
+  plan72:    { title:'План на 72 часа', desc:'Что сделать срочно, что зафиксировать, какие сроки нельзя пропустить.' },
+  checklist: { title:'Чек-лист доказательств', desc:'Что нужно доказать и чем это подтверждается.' },
+  penalty:   { title:'Расчёт неустойки и процентов', desc:'С разбивкой по периодам ставки ЦБ.' },
+  duty:      { title:'Расчёт госпошлины', desc:'Точная сумма с привязкой к 333.19/333.21 НК.' }
+};
+document.querySelectorAll('.preset-card[data-preset]').forEach(c => {
+  c.addEventListener('click', () => {
+    const k = c.dataset.preset;
+    if(presetData[k]){
+      document.getElementById('modalTitle').textContent = presetData[k].title;
+      document.getElementById('modalDesc').textContent = presetData[k].desc;
+    }
+    modal.classList.add('open');
+  });
+});
+document.getElementById('modalCancel').addEventListener('click', () => modal.classList.remove('open'));
+document.getElementById('modalSubmit').addEventListener('click', () => modal.classList.remove('open'));
+modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('open'); });
+
+document.getElementById('openCmds').addEventListener('click', () => modal.classList.add('open'));
+document.getElementById('allCmds').addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('open'); });
+</script>
+</body>
+</html>

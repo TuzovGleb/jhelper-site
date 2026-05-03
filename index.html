@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>jhelper — подготовка к процессу за час, а не за вечер</title>
+<meta name="description" content="AI-помощник для адвоката и небольшой юридической фирмы. Готовит черновики, разбирает аргументы оппонента, собирает позицию по делу." />
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+
+<link rel="stylesheet" href="styles.css" />
+
+<link rel="stylesheet" href="landing.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="app-header" id="header">
+  <div class="container app-header-inner">
+    <a href="#" class="logo">jhelper<span class="dot">.</span></a>
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="#scenarios">Возможности</a>
+        <a href="#presets">Сценарии</a>
+        <a href="#price">Цена</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#trial" class="btn btn-primary btn-sm header-cta">Попробовать бесплатно</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#scenarios">Возможности</a>
+  <a href="#presets">Сценарии</a>
+  <a href="#price">Цена</a>
+  <a href="#faq">FAQ</a>
+  <a href="#trial" class="btn btn-primary">Попробовать бесплатно</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">для адвокатов и небольших юрфирм</div>
+      <h1>Подготовка к процессу <em>— за час,</em> а не за вечер</h1>
+      <p class="hero-sub">AI-помощник для адвоката и небольшой юридической фирмы. Готовит черновики документов, разбирает аргументы оппонента, собирает позицию по делу — пока вы заняты другими делами.</p>
+      <div class="cta-row">
+        <a href="#trial" class="btn btn-primary">Попробовать бесплатно 14 дней</a>
+        <a href="#demo" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Посмотреть демо · 2 мин
+        </a>
+      </div>
+      <div class="cta-fineprint">Без карты. После 14 дней — бесплатный тариф остаётся навсегда.</div>
+    </div>
+
+    <div class="product-frame" aria-label="Скриншот продукта jhelper">
+      <div class="frame-bar">
+        <div class="fd"></div><div class="fd"></div><div class="fd"></div>
+        <div class="url">app.jhelper.ru / cases / А40-128945-2025</div>
+      </div>
+      <div class="app-mock">
+        <aside class="app-side">
+          <div class="lbl">Дела</div>
+          <div class="it active">А40-128945/2025<div class="meta">взыскание · АС г. Москвы</div></div>
+          <div class="it">Иванов / Петров<div class="meta">наследство · Тверской р/с</div></div>
+          <div class="it">ООО «Рассвет»<div class="meta">оспаривание сделки</div></div>
+          <div class="lbl">Команды</div>
+          <div class="it">⚡ План на 72 часа</div>
+          <div class="it">⚡ Расчёт неустойки</div>
+        </aside>
+        <main class="app-main">
+          <div class="app-head">
+            <div class="app-case-title">А40-128945/2025 — взыскание задолженности</div>
+            <div class="app-case-meta">
+              <span>Истец: ООО «Север-Логистика»</span>
+              <span>Заседание: 14.05</span>
+            </div>
+          </div>
+          <div class="app-chat">
+            <div class="msg msg-user">Подготовь позицию по делу. Ключевая норма — 333 ГК, оппонент просит снижение неустойки.</div>
+            <div class="msg msg-ai">
+              Собрал позицию из 12 тезисов с привязкой к страницам ваших документов. Контраргументы оппонента и ответы — отдельным блоком.
+              <div class="src">
+                <span class="src-chip">Опр. ВС № 305-ЭС24-…</span>
+                <span class="src-chip">Договор п. 4.3</span>
+                <span class="src-chip">+5</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-compose">
+            <div class="compose-input">Опишите ситуацию, вопрос или запрос…</div>
+            <button class="compose-send" aria-label="Отправить">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. TRUST -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 10h.01M7 14h.01M11 10h6M11 14h6"/></svg>Серверы в РФ</div>
+      <div class="trust-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>Соответствие 152-ФЗ</div>
+      <div class="trust-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.5 5.5l13 13"/></svg>Не обучаемся на ваших данных</div>
+      <div class="trust-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Адвокатская тайна сохраняется</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SCENARIOS -->
+<section class="section" id="scenarios">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Что вы делегируете</div>
+      <h2>Четыре задачи, которые перестают съедать вечер</h2>
+      <p class="sec-lede">jhelper не «заменяет юриста». Он берёт на себя рутинную часть подготовки и возвращает результат для финальной правки.</p>
+    </div>
+
+    <div class="scenarios-grid">
+      <article class="card scn-card reveal">
+        <div>
+          <div class="scn-num">01</div>
+          <h3 class="scn-title">Подготовить позицию по делу</h3>
+          <p class="scn-desc">Структурированная позиция: тезисы, нормы, контраргументы оппонента с ответами.</p>
+        </div>
+        <div class="scn-visual">
+          <div class="mv-row"><span class="pill">Тезис 1</span><span class="ttl">Срок исковой давности не истёк</span></div>
+          <div class="mv-row"><span class="pill">Норма</span><span class="ttl">ст. 200 ГК · п. 1</span><span class="meta">с. 4</span></div>
+          <div class="mv-row"><span class="pill">Тезис 2</span><span class="ttl">Акт сверки прерывает течение срока</span></div>
+          <div class="mv-row"><span class="pill">Контр.</span><span class="ttl">Опр. ВС № 305-ЭС24-1294</span></div>
+        </div>
+      </article>
+
+      <article class="card scn-card reveal">
+        <div>
+          <div class="scn-num">02</div>
+          <h3 class="scn-title">Сделать черновик процессуального документа</h3>
+          <p class="scn-desc">Иск, отзыв, апелляционная и кассационная жалоба, ходатайство.</p>
+        </div>
+        <div class="scn-visual">
+          <div class="mv-doc">
+            <div class="doc-title">Возражение на ходатайство</div>
+            <div class="ln med"></div><div class="ln"></div><div class="ln short"></div>
+            <div class="ln"></div><div class="ln med"></div><div class="ln short"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card scn-card reveal">
+        <div>
+          <div class="scn-num">03</div>
+          <h3 class="scn-title">Разобрать позицию оппонента</h3>
+          <p class="scn-desc">Загружаете отзыв или возражения — получаете слабые места и контраргументы.</p>
+        </div>
+        <div class="scn-visual">
+          <div class="arg-item"><div class="arg-tag">Слабое место</div>Ссылка на п. 3 договора противоречит редакции от 12.04.</div>
+          <div class="arg-item"><div class="arg-tag">Контраргумент</div>Акт сверки от 30.06 фиксирует иной размер задолженности.</div>
+          <div class="arg-item"><div class="arg-tag">Прецедент</div>Опр. ВС № 305-ЭС24-1294 — аналогичная фабула.</div>
+        </div>
+      </article>
+
+      <article class="card scn-card reveal">
+        <div>
+          <div class="scn-num">04</div>
+          <h3 class="scn-title">Собрать таймлайн и хронологию доказательств</h3>
+          <p class="scn-desc">Из переписки, договоров и актов — связная картина дела с привязкой к датам.</p>
+        </div>
+        <div class="scn-visual">
+          <div class="tl-row"><div class="date">12.04.24</div><div class="ev">Заключён договор поставки № 14/П</div></div>
+          <div class="tl-row"><div class="date">28.05.24</div><div class="ev">Отгрузка партии, ТТН № 2208</div></div>
+          <div class="tl-row"><div class="date">30.06.24</div><div class="ev">Акт сверки расчётов подписан</div></div>
+          <div class="tl-row"><div class="date">15.09.24</div><div class="ev">Претензия № 41 направлена ответчику</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PRESETS -->
+<section class="section presets" id="presets">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Готовые команды</div>
+      <h2>Готовые команды — нажмите и получите результат</h2>
+      <p class="sec-lede">Не нужно описывать задачу с нуля — выберите готовый сценарий.</p>
+    </div>
+
+    <div class="preset-grid reveal">
+      <!-- 1 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4 class="preset-name">Интервью клиента</h4>
+        <p class="preset-desc">20–40 уточняющих вопросов и дерево «если/то».</p>
+      </div>
+      <!-- 2 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M9 2h6"/></svg></div>
+        <h4 class="preset-name">План на 72 часа</h4>
+        <p class="preset-desc">Что сделать за 0–24 ч и 24–72 ч, что нельзя пропустить.</p>
+      </div>
+      <!-- 3 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="14" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg></div>
+        <h4 class="preset-name">Хронология с цитатами</h4>
+        <p class="preset-desc">Таймлайн событий с привязкой к страницам документов.</p>
+      </div>
+      <!-- 4 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><circle cx="12" cy="15" r="2.5"/></svg></div>
+        <h4 class="preset-name">Аудит договора</h4>
+        <p class="preset-desc">Топ-риски и варианты правок формулировок.</p>
+      </div>
+      <!-- 5 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 12l9 4 9-4"/><path d="M3 17l9 4 9-4"/></svg></div>
+        <h4 class="preset-name">Позиция по материалам</h4>
+        <p class="preset-desc">Каркас «тезис → доказательство → норма → контраргумент».</p>
+      </div>
+      <!-- 6 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v3"/><circle cx="11" cy="14" r=".6" fill="currentColor"/></svg></div>
+        <h4 class="preset-name">Поиск противоречий</h4>
+        <p class="preset-desc">Несостыковки в датах, суммах, версиях, подписантах.</p>
+      </div>
+      <!-- 7 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+        <h4 class="preset-name">Расчёт неустойки и процентов</h4>
+        <p class="preset-desc">Точный расчёт с привязкой к ставке ЦБ и таблицей.</p>
+      </div>
+      <!-- 8 -->
+      <div class="preset-card">
+        <div class="preset-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h4 class="preset-name">Возражения на иск / апелляция</h4>
+        <p class="preset-desc">Черновик процессуального документа с мотивировкой.</p>
+      </div>
+    </div>
+
+    <div class="preset-foot reveal">И ещё 5 команд внутри продукта.</div>
+  </div>
+</section>
+
+<!-- 5. HOW -->
+<section class="section how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">За 60 секунд</div>
+      <h2>Как устроена работа</h2>
+    </div>
+    <div class="steps">
+      <div class="card step reveal">
+        <div class="step-num">01</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+        <h3>Заводите дело</h3>
+        <p>Карточка с фабулой, сторонами, ключевыми датами.</p>
+      </div>
+      <div class="card step reveal">
+        <div class="step-num">02</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 21h14"/></svg>
+        <h3>Загружаете документы</h3>
+        <p>Иски, договоры, переписку, доказательства.</p>
+      </div>
+      <div class="card step reveal">
+        <div class="step-num">03</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 01-11.6 7.1L4 21l1.9-5.4A8 8 0 1121 12z"/></svg>
+        <h3>Спрашиваете</h3>
+        <p>Обычным языком, как помощника-юриста рядом за столом.</p>
+      </div>
+      <div class="card step reveal">
+        <div class="step-num">04</div>
+        <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h5v5"/><path d="M19 3l-9 9"/><path d="M19 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h5"/></svg>
+        <h3>Получаете рабочий черновик</h3>
+        <p>Со ссылками на источники, готовый к финальной правке.</p>
+      </div>
+    </div>
+    <div class="how-cta">
+      <a href="#demo" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Посмотреть демо · 2 мин
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PROOF -->
+<section class="section proof-wrap">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Запущено в 2025</div>
+      <h2>Молодой продукт. Сразу честно.</h2>
+    </div>
+    <div class="proof-card reveal">
+      <span class="small-h">О команде</span>
+      <p>jhelper создаёт команда юристов и инженеров. Продукт построен на собственной архитектуре поверх ведущих языковых моделей, дообученных под российскую правоприменительную практику. Все диалоги изолированы, серверы — в России, ваши данные не используются для обучения.</p>
+      <p>Сейчас бета-тестирование среди адвокатов и небольших юридических фирм. Присоединяйтесь — первые 14 дней без ограничений.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PRICING -->
+<section class="section" id="price">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Тарифы</div>
+      <h2>Прозрачная цена. Без «свяжитесь для расчёта».</h2>
+      <p class="sec-lede">14 дней полного доступа без карты. Дальше — Free или «Практика».</p>
+    </div>
+
+    <div class="pricing-wrap">
+      <!-- FREE -->
+      <div class="card price-card reveal">
+        <div class="name">Free</div>
+        <div class="price-tag-line">Навсегда. Без карты.</div>
+        <div class="price-num">0 ₽<span class="per">/ месяц</span></div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>20 запросов в месяц</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>1 активное дело</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Базовые сценарии (расчёты, короткие ответы)</li>
+          <li class="muted-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M6 18L18 6"/></svg>Без черновиков документов</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#trial" class="btn btn-secondary" style="justify-content:center;">Начать бесплатно</a>
+        </div>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="card price-card featured reveal">
+        <div class="featured-badge">14 дней бесплатно</div>
+        <div class="name">Практика</div>
+        <div class="price-tag-line">Для индивидуального адвоката</div>
+        <div class="price-num">2 990 ₽<span class="per">/ месяц</span></div>
+        <div class="price-yr">Или 29 900 ₽/год — экономия 17%</div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Безлимит запросов</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Неограниченно дел и документов</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Все 13 готовых команд</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Приоритетная поддержка</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#trial" class="btn btn-primary" style="justify-content:center;">Попробовать 14 дней бесплатно</a>
+          <div class="fineprint">Без карты. После 14 дней — авто-переход на Free.</div>
+        </div>
+      </div>
+
+      <!-- TEAM -->
+      <div class="card price-card reveal">
+        <div class="name">Команда</div>
+        <div class="price-tag-line">От 3 пользователей. Скидка от объёма.</div>
+        <div class="price-num">от 2 490 ₽<span class="per">/ польз. в месяц</span></div>
+        <ul class="price-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Всё из тарифа «Практика»</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Общее рабочее пространство, общая база дел</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Управление доступами и ролями</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>Менеджер поддержки</li>
+        </ul>
+        <div class="price-cta">
+          <a href="#trial" class="btn btn-secondary" style="justify-content:center;">Попробовать 14 дней бесплатно</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. COMPARE -->
+<section class="section" id="compare" style="background:var(--bg-soft);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="sec-eyebrow">Сравнение</div>
+      <h2>jhelper vs ChatGPT — где разница</h2>
+    </div>
+
+    <div class="compare-card reveal">
+      <table class="compare-table">
+        <thead>
+          <tr><th></th><th>ChatGPT</th><th>jhelper</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Подготовка по материалам дела</th><td><span class="no">Нет</span></td><td><span class="yes">Да</span></td></tr>
+          <tr><th>Черновики процессуальных документов</th><td><span class="no">Поверхностно</span></td><td><span class="yes">Да</span></td></tr>
+          <tr><th>Загрузка материалов дела с сохранением</th><td><span class="no">Нет</span></td><td><span class="yes">Да</span></td></tr>
+          <tr><th>Адвокатская тайна и серверы в РФ</th><td><span class="no">Нет</span></td><td><span class="yes">Да</span></td></tr>
+          <tr><th>Готовые команды для типовых задач</th><td><span class="no">Нет</span></td><td><span class="yes">Да</span></td></tr>
+        </tbody>
+      </table>
+      <div class="compare-note">
+        jhelper — это не общий чат с моделью. Это рабочее место, где ваши дела, документы и сценарии собраны в одном контуре, а ответы строятся на ваших материалах и российском правоприменении.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="reveal">
+        <div class="sec-eyebrow">Частые вопросы</div>
+        <h2>Всё, о чём обычно спрашивают в первый раз.</h2>
+        <p class="sec-lede">Не нашли ответ — напишите на <a href="mailto:hello@jhelper.ru">hello@jhelper.ru</a>, отвечает живой человек.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item"><summary class="faq-q">Что будет после 14 дней?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Если не оформите подписку — автоматически перейдёте на Free. Без отключения, без напоминаний от менеджера. На Free сохранятся ваши дела и документы, но снизится лимит запросов до 20 в месяц и станут недоступны черновики документов.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Где хранятся мои данные и данные моих доверителей?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Все данные хранятся на серверах в РФ, оператор персональных данных зарегистрирован в Реестре Роскомнадзора. Доступ к содержимому ваших дел имеет только ваш аккаунт.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Используются ли мои документы для обучения модели?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Нет. Содержимое ваших дел никогда не используется для обучения моделей — ни наших, ни сторонних провайдеров. Это закреплено договором.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Что с адвокатской тайной?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Режим адвокатской тайны соблюдается технически: шифрование канала и хранилища, изолированные пространства дел, журнал доступа. Юридически — соответствующий пункт включён в условия обслуживания.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">AI же галлюцинирует — как с этим у вас?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Каждое утверждение в ответах jhelper привязано к конкретному источнику: реквизитам судебного акта или странице вашего документа. Если источника нет — модель честно отвечает «не знаю».</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Какие документы и форматы поддерживаются?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">DOCX, PDF (включая сканы — распознаём), JPG/PNG, TXT. Email-переписка импортируется в виде PDF/EML.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Есть ли мобильная версия?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Да. jhelper работает в браузере телефона — можно прочитать ответ, задать уточняющий вопрос и получить готовый черновик прямо в коридоре суда.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Как устроена отмена подписки?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">Кнопка «Отменить» в настройках аккаунта. Без писем, звонков и удержаний. Оплаченный период доступен до конца, дальше — авто-переход на Free.</div>
+        </details>
+        <details class="faq-item"><summary class="faq-q">Чем вы отличаетесь от ChatGPT, Гаранта и других сервисов?<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <div class="faq-a">ChatGPT — общий чат без ваших материалов и без обязательств по тайне. Гарант, КонсультантПлюс, Casebook — справочные базы и мониторинг, без помощника, который пишет черновики и работает с вашими документами. jhelper закрывает именно эту нишу.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. NO VPN -->
+<section class="no-vpn">
+  <div class="container">
+    <p>Работаем в России. Без VPN. Оплата картой РФ или с расчётного счёта.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="trial">
+  <div class="container final-inner">
+    <h2>Попробуйте на одном своём деле</h2>
+    <p>14 дней полного доступа без карты. Дальше — бесплатный тариф остаётся навсегда.</p>
+    <a href="cases.html" class="btn btn-primary btn-lg">Начать 14 дней бесплатно</a>
+    <div class="final-fine">Без карты. Бесплатный тариф остаётся навсегда.</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <a href="#" class="logo">jhelper<span class="dot">.</span></a>
+      <div class="footer-links">
+        <a href="cases.html">Мои дела</a>
+        <a href="chat.html">Чат</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Оферта</a>
+        <a href="mailto:hello@jhelper.ru">hello@jhelper.ru</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 jhelper. Все права защищены.</div>
+      <div>ИНН 0000000000 · ОГРН 0000000000000</div>
+    </div>
+  </div>
+</footer>
+
+<a href="#trial" class="mobile-cta">Попробовать бесплатно 14 дней</a>
+
+<script>
+const header = document.getElementById('header');
+const onScroll = () => {
+  if(window.scrollY > 4) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+};
+window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+const mt = document.getElementById('menuToggle');
+const mm = document.getElementById('mobileMenu');
+mt && mt.addEventListener('click', () => mm.classList.toggle('open'));
+mm && mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mm.classList.remove('open')));
+
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

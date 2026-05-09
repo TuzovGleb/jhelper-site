@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Вход — jhelper</title>
+<meta name="description" content="Вход в jhelper — AI-помощник для адвоката и небольшой юридической фирмы." />
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-aside">
+    <a href="index.html" class="logo">jhelper<span class="dot">.</span></a>
+    <div class="aside-body">
+      <h2>AI-помощник для адвоката</h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/></svg>
+          Серверы в РФ. Доступ к содержимому дел — только у вас.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.5 5.5l13 13"/></svg>
+          Содержимое дел не используется для обучения моделей.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 1 1 8 0v4"/></svg>
+          Режим адвокатской тайны — технически и юридически.
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-topbar">
+      <span class="label">Нет аккаунта?</span>
+      <a href="signup.html" class="btn btn-outline-accent btn-sm">Попробовать 14 дней</a>
+    </div>
+
+    <div class="auth-form-wrap">
+      <h1>Войти в jhelper</h1>
+      <p class="lede">Введите email и пароль.</p>
+
+      <form id="signinForm" novalidate>
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="ivanov@advokat.ru" required />
+        </div>
+
+        <div class="auth-field">
+          <label for="password">Пароль</label>
+          <div class="auth-pwd">
+            <input class="input" id="password" name="password" type="password" autocomplete="current-password" required />
+            <button type="button" class="toggle-pwd" aria-label="Показать пароль" data-toggle="password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="auth-row">
+          <label class="auth-check">
+            <input type="checkbox" id="remember" />
+            <span>Запомнить меня</span>
+          </label>
+          <a href="forgot-password.html" class="link-accent">Забыли пароль?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg auth-submit">Войти</button>
+      </form>
+
+      <p class="auth-row-bottom">
+        Нет аккаунта? <a href="signup.html">Попробовать 14 дней бесплатно</a>
+      </p>
+    </div>
+
+    <div class="auth-foot">
+      <a href="#">Оферта</a>
+      <a href="#">Политика конфиденциальности</a>
+      <a href="mailto:hello@jhelper.ru">hello@jhelper.ru</a>
+    </div>
+  </main>
+</div>
+
+<script>
+document.querySelectorAll('[data-toggle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-toggle');
+    const input = document.getElementById(id);
+    if (!input) return;
+    const isPwd = input.type === 'password';
+    input.type = isPwd ? 'text' : 'password';
+    btn.setAttribute('aria-label', isPwd ? 'Скрыть пароль' : 'Показать пароль');
+  });
+});
+
+// Demo submit → cases.html (in product: POST /api/signin)
+document.getElementById('signinForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const pwd = document.getElementById('password').value;
+  if (!email || !pwd) {
+    alert('Введите email и пароль');
+    return;
+  }
+  location.href = 'cases.html';
+});
+</script>
+</body>
+</html>

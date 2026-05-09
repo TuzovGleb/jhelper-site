@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Подтвердите email — jhelper</title>
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-aside">
+    <a href="index.html" class="logo">jhelper<span class="dot">.</span></a>
+    <div class="aside-body">
+      <h2>Почти готово. Подтвердите почту — и&nbsp;14 дней начнутся.</h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          Подтверждение защищает аккаунт от чужого доступа
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          Уже можете заводить дела и пользоваться чатом — без подтверждения нельзя только экспортировать документы и оплатить
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          Ссылка действует 24 часа
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-topbar">
+      <a href="cases.html" class="link-accent" style="font-weight:500">Перейти в Мои дела →</a>
+    </div>
+
+    <div class="auth-form-wrap auth-status">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l8 6 8-6"/><rect x="4" y="5" width="16" height="14" rx="2"/></svg>
+      </div>
+      <h1>Подтвердите email</h1>
+      <p>Письмо отправлено на <span class="email-strong" id="sentTo">—</span>. Откройте его и нажмите кнопку <em>«Подтвердить email»</em>.</p>
+
+      <div class="mail-actions">
+        <a class="btn btn-secondary btn-sm" href="https://mail.yandex.ru" target="_blank" rel="noopener">Открыть Я.Почту</a>
+        <a class="btn btn-secondary btn-sm" href="https://mail.google.com" target="_blank" rel="noopener">Открыть Gmail</a>
+        <a class="btn btn-secondary btn-sm" href="https://mail.mail.ru" target="_blank" rel="noopener">Открыть Mail.ru</a>
+      </div>
+
+      <p class="resend">Не пришло за пару минут? Загляните в «Спам» или <button type="button" id="resendBtn">отправить ещё раз</button>.</p>
+    </div>
+
+    <div class="auth-foot">
+      <a href="#">Оферта</a>
+      <a href="#">Политика конфиденциальности</a>
+      <a href="mailto:hello@jhelper.ru">hello@jhelper.ru</a>
+    </div>
+  </main>
+</div>
+
+<script>
+// Read email from ?email=… set by signup.html
+const params = new URLSearchParams(location.search);
+const email = params.get('email');
+const sentToEl = document.getElementById('sentTo');
+sentToEl.textContent = email || 'вашу почту';
+
+document.getElementById('resendBtn')?.addEventListener('click', () => {
+  const btn = document.getElementById('resendBtn');
+  btn.disabled = true;
+  btn.textContent = 'Отправлено ✓';
+  setTimeout(() => { btn.disabled = false; btn.textContent = 'отправить ещё раз'; }, 3000);
+});
+</script>
+</body>
+</html>

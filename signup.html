@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Регистрация — jhelper</title>
+<meta name="description" content="14 дней полного доступа к jhelper. Без карты. Базовый тариф остаётся навсегда." />
+
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2314181F'/><text x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23FAFAF7'>j</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <aside class="auth-aside">
+    <a href="index.html" class="logo">jhelper<span class="dot">.</span></a>
+    <div class="aside-body">
+      <h2>Подготовка к процессу — за&nbsp;часы, а&nbsp;не&nbsp;за&nbsp;дни</h2>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          14 дней полного доступа без карты
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          13 готовых команд: позиция, претензия, расчёт неустойки
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          Серверы в РФ, доступ к данным — только у вас
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+          После 14 дней — Базовый тариф остаётся навсегда
+        </li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="auth-main">
+    <div class="auth-topbar">
+      <span class="label">Уже есть аккаунт?</span>
+      <a href="signin.html" class="btn btn-outline-accent btn-sm">Войти</a>
+    </div>
+
+    <div class="auth-form-wrap">
+      <h1>Зарегистрироваться</h1>
+      <p class="lede">Без карты. После 14 дней — Базовый тариф остаётся навсегда.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="ivanov@advokat.ru" required />
+        </div>
+
+        <div class="auth-field">
+          <label for="password">Пароль</label>
+          <div class="auth-pwd">
+            <input class="input" id="password" name="password" type="password" autocomplete="new-password" placeholder="Минимум 8 символов" minlength="8" required />
+            <button type="button" class="toggle-pwd" aria-label="Показать пароль" data-toggle="password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <div class="hint">Минимум 8 символов. Лучше — фраза из 12+ символов, которую вы не забудете.</div>
+        </div>
+
+        <div class="auth-checks">
+          <label class="auth-check">
+            <input type="checkbox" id="agree-terms" required />
+            <span>Принимаю <a href="#">Оферту</a> и даю согласие на <a href="#">обработку персональных данных</a></span>
+          </label>
+          <label class="auth-check">
+            <input type="checkbox" id="agree-marketing" />
+            <span>Получать новости и обучающие материалы по продукту (можно отписаться в любой момент)</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg auth-submit">Создать аккаунт</button>
+      </form>
+
+      <p class="auth-row-bottom">
+        Уже есть аккаунт? <a href="signin.html">Войти</a>
+      </p>
+    </div>
+
+    <div class="auth-foot">
+      <a href="#">Оферта</a>
+      <a href="#">Политика конфиденциальности</a>
+      <a href="#">Соглашение об обработке ПДн</a>
+      <a href="mailto:hello@jhelper.ru">hello@jhelper.ru</a>
+    </div>
+  </main>
+</div>
+
+<script>
+// Toggle password visibility
+document.querySelectorAll('[data-toggle]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-toggle');
+    const input = document.getElementById(id);
+    if (!input) return;
+    const isPwd = input.type === 'password';
+    input.type = isPwd ? 'text' : 'password';
+    btn.setAttribute('aria-label', isPwd ? 'Скрыть пароль' : 'Показать пароль');
+  });
+});
+
+// Demo submit (preview only — in product: POST /api/signup → email confirmation)
+document.getElementById('signupForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const pwd = document.getElementById('password').value;
+  const ok = document.getElementById('agree-terms').checked;
+  if (!email || !pwd || pwd.length < 8 || !ok) {
+    alert('Заполните email, пароль (от 8 символов) и подтвердите согласия');
+    return;
+  }
+  // Pass email via querystring so verify-email page can show it
+  location.href = 'verify-email.html?email=' + encodeURIComponent(email);
+});
+</script>
+</body>
+</html>

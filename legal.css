@@ -1,0 +1,132 @@
+/* Legal pages — narrow reader layout, print-friendly */
+
+.legal-shell{
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 24px 24px 80px;
+}
+
+.legal-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding: 18px 0 28px;border-bottom:1px solid var(--border);margin-bottom: 32px;
+}
+.legal-header .logo{
+  font-family: var(--font-serif); font-weight:600; font-size:22px;
+  color: var(--text-primary); display:inline-flex; align-items:baseline;
+}
+.legal-header .logo .dot{color:var(--accent)}
+.legal-header .nav-back{font-size:14px;color:var(--text-secondary);font-weight:500}
+.legal-header .nav-back:hover{color:var(--text-primary)}
+
+/* Disclaimer ribbon — visible on screen, hidden in print */
+.legal-disclaimer{
+  background:#FFF6E5;
+  border:1px solid #F0D58A;
+  color:#5C4310;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.legal-disclaimer svg{
+  width:20px;height:20px;color:#B07A2A;flex-shrink:0;margin-top:1px;
+}
+.legal-disclaimer strong{color:#5C4310}
+
+.legal-h1{
+  font-family: var(--font-serif); font-weight:500;
+  font-size: clamp(28px, 4vw, 38px); line-height:1.18;
+  letter-spacing:-.012em; margin: 0 0 6px;
+}
+.legal-meta{
+  color: var(--text-secondary); font-size: 14px; margin: 0 0 32px;
+}
+.legal-meta strong{color:var(--text-primary)}
+
+.legal-body{
+  font-size: 16.5px; line-height: 1.7; color: var(--text-primary);
+}
+.legal-body h2{
+  font-family: var(--font-serif); font-weight:500;
+  font-size: 22px; line-height:1.25;
+  margin: 40px 0 14px;
+  letter-spacing:-.005em;
+}
+.legal-body h3{
+  font-family: var(--font-sans); font-weight:600;
+  font-size: 16px; color: var(--text-primary);
+  margin: 24px 0 8px;
+  letter-spacing:0;
+}
+.legal-body p{margin: 0 0 14px}
+.legal-body ul, .legal-body ol{
+  margin: 0 0 14px; padding-left: 24px;
+}
+.legal-body li{margin-bottom: 8px}
+.legal-body li::marker{color: var(--text-secondary)}
+.legal-body a{
+  color: var(--accent); text-decoration: underline; text-underline-offset: 2px;
+}
+.legal-body a:hover{color: var(--accent-hover)}
+.legal-body code, .legal-body .placeholder{
+  background:#F1EFE7; padding: 2px 6px; border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 14px; color: #5F2424;
+}
+.legal-body blockquote{
+  border-left: 3px solid var(--accent);
+  background: #FBFAF5;
+  margin: 16px 0; padding: 12px 18px;
+  border-radius: 0 6px 6px 0;
+  color: #2A313D; font-size: 15.5px;
+}
+
+.legal-toc{
+  background:#FBFAF5;
+  border:1px solid var(--border-soft);
+  border-radius:10px;
+  padding: 18px 22px;
+  margin: 0 0 32px;
+}
+.legal-toc h3{
+  font-family: var(--font-sans); font-weight:600; font-size:13px;
+  text-transform:uppercase; letter-spacing:.08em; color: var(--text-secondary);
+  margin: 0 0 10px;
+}
+.legal-toc ol{
+  margin:0; padding-left: 22px; font-size: 14.5px; line-height: 1.6;
+  columns: 2; column-gap: 24px;
+}
+.legal-toc li{margin-bottom: 4px; break-inside: avoid}
+.legal-toc a{color: var(--text-primary); text-decoration: none}
+.legal-toc a:hover{color: var(--accent); text-decoration: underline}
+
+.legal-foot{
+  margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+  font-size: 13px; color: var(--text-muted);
+  display:flex;flex-wrap:wrap;gap:18px;
+}
+.legal-foot a{color: var(--text-muted)}
+.legal-foot a:hover{color: var(--text-secondary)}
+
+@media (max-width: 720px){
+  .legal-shell{padding: 16px 18px 60px}
+  .legal-toc ol{columns: 1}
+  .legal-body{font-size: 16px}
+  .legal-body h2{font-size: 20px; margin-top: 32px}
+}
+
+/* Print-friendly: hide nav, disclaimer, TOC; tighten margins; black text */
+@media print{
+  .legal-header .nav-back, .legal-disclaimer, .legal-foot{display:none}
+  .legal-header{border-bottom:1px solid #000;margin-bottom:24px;padding:0 0 12px}
+  .legal-shell{max-width:none;padding:0 0 0}
+  .legal-body{font-size:11pt;line-height:1.5;color:#000}
+  .legal-body h2{font-size:14pt;margin-top:20pt}
+  .legal-body a{color:#000;text-decoration:underline}
+  .legal-h1{font-size:18pt}
+  .placeholder, .legal-body code{background:transparent;border:1px dashed #888;color:#000}
+  .legal-toc{background:transparent;border:1px solid #ccc}
+}
